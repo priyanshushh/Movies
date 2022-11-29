@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,300&family=Roboto:ital,wght@1,300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(8, 7, 10);
+  overflow-x: hidden;
+}
+
+#logo {
+  text-decoration: none;
+  color: white;
+}
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 6; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  backdrop-filter: blur(15px);
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 12%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 0vh; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 5px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 10vh;
+}
+.videomovie {
+  font-family: "Nunito Sans", sans-serif;
+  color: white;
+  font-size: 4vh;
+}
+.embed.hide {
+  display: none;
+}
+.embed.show {
+  height: 60vh;
+  width: 60vw;
+  display: inline-block;
+}
+
+.arrow {
+  position: absolute;
+  top: 40vh;
+}
+.arrow.left-arrow {
+  left: 2%;
+  font-size: 8vh;
+}
+.arrow.right-arrow {
+  right: 2%;
+  font-size: 8vh;
+}
+
+.dots {
+  position: relative;
+  top: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vh;
+  flex-wrap: wrap;
+  font-size: 2.5vh;
+  color: white;
+}
+
+.dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1vh;
+  cursor: pointer;
+  height: 4vh;
+  width: 4vh;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgb(40, 104, 231), rgb(61, 205, 231));
+}
+.dot.active {
+  background: linear-gradient(-45deg, rgb(61, 205, 231), rgb(231, 40, 107));
+}
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+header {
+  position: fixed;
+  z-index: 5;
+  height: 6vh;
+  width: 100%;
+  background: linear-gradient(45deg, rgba(52, 114, 239), rgb(61, 205, 231));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+/* #form {
+  margin: 2vh;
+} */
+.search {
+  outline: none;
+  height: 4vh;
+  width: 15vw;
+  margin: 1vh;
+  border: 2px solid white;
+  border-radius: 15vh;
+
+  font-size: 1.8vh;
+}
+.search::placeholder {
+  font-size: 1.5vh;
+  padding: 1vh;
+}
+
+header h1 {
+  font-size: 5vh;
+  font-family: "Nunito Sans", sans-serif;
+  margin: 1vh;
+}
+#movieDis {
+  position: relative;
+  height: 65vh;
+  width: 100vw;
+  display: flex;
+  background: linear-gradient(90deg, rgba(52, 114, 239), rgb(61, 205, 231));
+}
+#about {
+  width: 30vw;
+  margin-top: 5vh;
+  padding: 5vh;
+}
+.img {
+  height: 45vh;
+  border-radius: 1vh;
+  width: 90%;
+}
+#raiting {
+  color: white;
+  font-size: 2vh;
+  font-weight: 600;
+  font-family: "Nunito Sans", sans-serif;
+  background-color: rgb(247, 203, 27);
+  border-radius: 2vh;
+  margin: 1vh 0;
+  padding: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18vw;
+}
+
+#title {
+  border-bottom: 1px solid white;
+  margin: 5vh 0;
+  font-size: 5vh;
+}
+#about2 {
+  font-family: "Nunito Sans", sans-serif;
+  width: 100%;
+  margin-top: 6vh;
+  margin-right: 5vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5vh;
+  padding: 2vh;
+  color: white;
+}
+#overview-heading {
+  margin: 1vh 0;
+}
+
+#btn {
+  height: 4.5vh;
+  background-color: transparent;
+  border: none;
+  font-size: 2vh;
+  width: 10vw;
+  color: white;
+  margin-top: 3vh;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 3vh;
+  background-color: crimson;
+}
+#similarmovies {
+  font-size: 4vh;
+  border-bottom: 1px solid black;
+  margin: 2vh;
+  position: absolute;
+  color: white;
+  left: 40%;
+  font-family: "Nunito Sans", sans-serif;
+}
+#scrolldiv {
+  position: relative;
+  overflow-y: scroll;
+  overflow-y: auto;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 8vh;
+  /* background: linear-gradient(45deg, rgb(9, 87, 244), rgb(61, 205, 231)); */
+}
+main {
+  position: absolute;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.card {
+  position: relative;
+  height: 50vh;
+  padding: 1vh;
+  margin: 4vh;
+  width: 20vw;
+  border-radius: 1vh;
+  box-shadow: 0px 5px 25px black;
+  background-color: rgb(13, 13, 16);
+  overflow: hidden;
+  color: white;
+
+  /* background: linear-gradient(-45deg, rgba(52, 114, 239), rgb(61, 205, 231)); */
+}
+
+.img {
+  height: 40vh;
+  width: 20vw;
+  border-radius: 1vh;
+  background-color: whitesmoke;
+}
+
+.about-sec {
+  color: rgb(0, 0, 0);
+  border-radius: 1vh;
+  text-transform: uppercase;
+  width: 100%;
+  height: 5vh;
+  overflow: hidden;
+  font-size: 2.5vh;
+  font-weight: 600;
+  margin-top: 1vh;
+  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .rating, */
+.name {
+  color: rgb(0, 0, 0);
+  margin: 0.5vh;
+}
+.overview {
+  position: absolute;
+  height: 50vh;
+  font-size: 2vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nunito Sans", sans-serif;
+  text-align: center;
+  transform: translateY(101%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1vh;
+  border-radius: 1vh;
+  color: white;
+  transition: transform 0.5s ease-in-out;
+}
+.overview h3 {
+  margin: 2vh;
+}
+.card:hover .overview {
+  transform: translateY(0);
+}
+
+.read-btn {
+  position: absolute;
+  height: 10vh;
+  width: 20vw;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.read-more {
+  border-radius: 2vh;
+  border: none;
+  color: white;
+  font-size: 2vh;
+  background-color: crimson;
+  height: 4vh;
+  width: 50%;
+  cursor: pointer;
+}
+.read-more a {
+  text-decoration: none;
+  color: white;
+}
+
+#reviews {
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#reviews h1 {
+  position: relative;
+  font-size: 4vh;
+  top: 4vh;
+  margin: 5vh;
+  border-bottom: 1px solid black;
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.review {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1vh;
+  margin: 2vh;
+  padding: 1vh;
+  background-color: rgb(13, 13, 16);
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.review-header {
+  background: linear-gradient(90deg, rgba(52, 114, 239), rgb(61, 205, 231));
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  border-radius: 1vh;
+}
+.name {
+  color: white;
+  text-transform: uppercase;
+}
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 2vh;
+  margin-left: 2vh;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+}
+.avatar {
+  height: 4vh;
+  width: 4vh;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.date {
+  height: 4vh;
+  width: 100%;
+  margin-top: 1.5vh;
+  font-size: 2vh;
+}
+.content {
+  margin: 1vh 2vh;
+  font-size: 2vh;
+
+  text-align: left;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vh;
+  position: relative;
+  height: 5vh;
+  width: 100%;
+  margin-top: 5vh;
+  background: linear-gradient(45deg, rgba(52, 114, 239), rgb(61, 205, 231));
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+}
+@media (max-width: 999px) {
+  #movieDis,
+  #about {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3vh;
+  }
+
+  .img {
+    width: 100%;
+  }
+  #raiting {
+    width: 90%;
+  }
+  #about2 {
+    margin: 0;
+    padding: 0;
+  }
+  #btn {
+    width: 100%;
+  }
+  #scrolldiv {
+    justify-content: start;
+  }
+  .card {
+    width: 80vw;
+    height: 50vh;
+  }
+  .date {
+    font-size: small;
+  }
+  footer {
+    font-size: x-small;
+  }
+  .read-btn {
+    width: 100%;
+  }
+}

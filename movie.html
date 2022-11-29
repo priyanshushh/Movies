@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="movie.css" />
+    <title>Movie</title>
+  </head>
+  <body>
+    <!-- The overlay -->
+    <div id="myNav" class="overlay">
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+
+      <!-- Overlay content -->
+      <div class="overlay-content" id="overlay-content"></div>
+      <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow"
+        >&#10502;</a
+      >
+      <a href="javascript:void(0)" id="right-arrow" class="arrow right-arrow"
+        >&#10503;</a
+      >
+    </div>
+    <header>
+      <h1><a id="logo" href="./index.html">MOVIES</a></h1>
+      <!-- <form id="form">
+        <input type="text" placeholder="Search Movies" class="search" />
+      </form> -->
+    </header>
+
+    <div id="movieDis">
+      <div id="about">
+        <div id="poster"></div>
+      </div>
+      <div id="about2">
+        <div id="title"></div>
+        <h2 id="overview-heading">Overview</h2>
+        <div id="overview"></div>
+        <button id="btn">Videos</button>
+      </div>
+    </div>
+    <h1 id="similarmovies">SIMILAR MOVIES</h1>
+    <div id="scrolldiv">
+      <main></main>
+    </div>
+
+    <div id="reviews">
+      <h1>Top Reviews</h1>
+    </div>
+    <footer>Created BY Priyanshu Sharma | © 2022 All rights reserved.</footer>
+    <script type="text/javascript" src="./js/data.js"></script>
+  </body>
+</html>

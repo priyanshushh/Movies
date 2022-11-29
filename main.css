@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,300&family=Roboto:ital,wght@1,300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+header {
+  position: fixed;
+  z-index: 5;
+  height: 6vh;
+  width: 100%;
+  background: linear-gradient(45deg, rgba(52, 114, 239), rgb(61, 205, 231));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+/* #form {
+  margin: 2vh;
+} */
+.search {
+  outline: none;
+  height: 4vh;
+  width: 12vw;
+  border: 2px solid white;
+  border-radius: 15vh;
+  color: black;
+  font-size: 1.5vh;
+  padding: 0 2vh;
+  margin-right: 4vh;
+}
+.search::placeholder {
+  padding: 3vh;
+  font-size: 1.5vh;
+}
+
+#logoo {
+  text-decoration: none;
+  color: white;
+  font-size: 5vh;
+  font-family: "Nunito Sans", sans-serif;
+  margin: 2vh;
+}
+main {
+  position: relative;
+  top: 6vh;
+  min-height: 100vh;
+  background-color: rgb(26, 24, 32);
+  background-color: rgb(8, 7, 10);
+
+  /* background: linear-gradient(90deg, rgba(52, 114, 239), rgb(61, 205, 231)); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card {
+  position: relative;
+  padding: 1vh;
+  margin: 5vh;
+  padding: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5vh;
+  width: 25vw;
+  box-shadow: 0px 5px 25px black;
+  overflow: hidden;
+  color: white;
+  background-color: rgb(13, 13, 16);
+  transition: 0.5s;
+  /* background: linear-gradient(-45deg, rgba(52, 114, 239), rgb(61, 205, 231)); */
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.img {
+  height: 25vh;
+  width: 12vw;
+  border-radius: 1vh;
+  background-color: whitesmoke;
+  transition: 0.5s;
+}
+.card:hover .img {
+  border-radius: 0;
+  margin-right: 0.5vh;
+  transform: scale(1.2);
+}
+
+.about-sec {
+  color: rgb(255, 255, 255);
+  border-radius: 1vh;
+  text-transform: uppercase;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.mini-text {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: small;
+  padding: 1vw;
+  overflow: hidden;
+  height: 7vh;
+  width: 90%;
+}
+/* .rating, */
+.name {
+  margin: 0 1vw;
+  font-weight: 600;
+  margin-bottom: none;
+  color: rgb(255, 255, 255);
+  font-size: x-large;
+}
+
+.read-btn {
+  margin: 3vh 2vh;
+  height: 5vh;
+  width: 10vw;
+}
+
+.read-more {
+  transition: 0.5s;
+  border-radius: 2vh;
+  border: none;
+  font-size: 13px;
+  height: 4vh;
+  width: 65%;
+  cursor: pointer;
+  background-color: crimson;
+}
+.read-more a {
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vh;
+  position: relative;
+  height: 5vh;
+  width: 100%;
+  margin-top: 5vh;
+  background: linear-gradient(45deg, rgba(52, 114, 239), rgb(61, 205, 231));
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* 
+#more {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  height: 100vh;
+  width: 100%;
+}
+#bgr {
+  border-radius: 1vh;
+  height: 0.4vh;
+  width: 2vw;
+  position: absolute;
+  top: 8vh;
+  left: 90%;
+  margin: 2vh;
+  cursor: pointer;
+  background-color: white;
+}
+#bgr::after {
+  content: "";
+  position: absolute;
+  height: 0.4vh;
+  width: 2vw;
+  border-radius: 1vh;
+  top: 0.8vh;
+  left: 0.8vh;
+  background-color: white;
+}
+#moree {
+  border-radius: 1vh;
+  background-color: black;
+  margin-top: 5vh;
+  height: 90vh;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#poster {
+  height: 50vh;
+  width: 50%;
+} */
+@media (max-width: 999px) {
+  .card {
+    flex-direction: column;
+    margin: 4vh 1vh;
+    width: 75vw;
+  }
+  .img {
+    width: 100%;
+  }
+  .read-btn {
+    height: 6vh;
+    width: 40vw;
+    padding: 1vh;
+  }
+  .about-sec {
+    margin-top: 3vh;
+  }
+  .mini-text {
+    height: 6vh;
+  }
+  footer {
+    font-size: 1.5vh;
+  }
+}
